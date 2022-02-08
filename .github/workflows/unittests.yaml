@@ -10,6 +10,9 @@ jobs:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v1
       - name: Run tests and generate artifacts
+        env:
+          secret1: ${{ secrets.SECRET1 }}
+          secret2: ${{ secrets.SECRET2 }}
         uses: matlab-actions/run-tests@v1
         with:
           test-results-pdf: test-results/results.pdf
