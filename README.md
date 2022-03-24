@@ -1,3 +1,7 @@
-# mlaction-test
+# Main README
+This is the main README with a link to
+[Documentation/Other.md](Documentation/Other.md)
 
-[![Run Tests](https://github.com/maben-mw/mlaction-test/actions/workflows/unittests.yaml/badge.svg)](https://github.com/maben-mw/mlaction-test/actions/workflows/unittests.yaml)
+```matlab
+disp 'Hello'
+```

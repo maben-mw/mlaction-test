@@ -2,23 +2,23 @@ name: Run Tests
 on: [push, workflow_dispatch]
 jobs:
   my-job:
-    name: Run MATLAB Tests and Generate Artifacts
+    name: Build doc
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Set up MATLAB
-        uses: matlab-actions/setup-matlab@v1
-      - name: Run tests and generate artifacts
-        env:
-          secret1: ${{ secrets.SECRET1 }}
-          secret2: ${{ secrets.SECRET2 }}
-        uses: matlab-actions/run-tests@v1
+      - uses: actions/setup-python@v3
         with:
-          test-results-pdf: test-results/results.pdf
-      - name: Publish test results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v2
+          python-version: '3.9'
+      - name: Install Python Dependencies
+        run: pip install -r Documentation/requirements.txt
+        working-directory: Documentation
+      - name: Build Documentation
+        run: make html
+        working-directory: Documentation  
+      - name: Store as Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          name: test-results
-          path: test-results/results.pdf
+          name: docs
+          path: Documentation/_build/html/
+          
