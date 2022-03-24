@@ -11,7 +11,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install Python Dependencies
-        run: pip install -r Documentation/requirements.txt
+        run: pip install -r requirements.txt
         working-directory: Documentation
       - name: Build Documentation
         run: make html
