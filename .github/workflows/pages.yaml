@@ -1,8 +1,8 @@
 name: Generate Documentation and Publish to Pages
 on: [push, workflow_dispatch]
 jobs:
-  my-job:
-    name: Build doc
+  pages:
+    name: Generate Documentation and Publish to Pages 
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
