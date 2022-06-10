@@ -1,7 +1,5 @@
 # Main README
-This is the main README with a link to
-[Documentation/Other.md](Documentation/Other.md)
+This is the main README.
 
-```matlab
-disp 'Hello'
-```
+## Usage
+See [https://maben-mw.github.io/mlaction-test/](https://maben-mw.github.io/mlaction-test/) for the package documentation.
